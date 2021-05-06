@@ -221,7 +221,6 @@ requests==2.25.1
 requests-oauthlib==1.3.0
 rope==0.14.0
 rsa==4.7.2
-ruamel-yaml==0.15.46
 schedule==1.1.0
 scikit-image==0.15.0
 scikit-learn==0.24.1
