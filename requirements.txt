@@ -123,7 +123,6 @@ MarkupSafe==1.1.1
 matplotlib==3.1.0
 mccabe==0.6.1
 mediapipe==0.8.3.1
-menuinst==1.4.16
 mistune==0.8.4
 mkl-fft==1.0.12
 mkl-random==1.0.2
