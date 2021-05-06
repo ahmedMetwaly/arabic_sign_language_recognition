@@ -34,7 +34,7 @@ clyent==1.2.1
 colorama==0.4.1
 comtypes==1.1.7
 conda==4.3.16
-conda-build==3.18.8
+conda-build==2.1.5
 conda-package-handling==1.3.11
 conda-verify==3.4.2
 contextlib2==0.5.5
