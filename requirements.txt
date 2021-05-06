@@ -124,8 +124,6 @@ matplotlib==3.1.0
 mccabe==0.6.1
 mediapipe==0.8.3.1
 mistune==0.8.4
-mkl-random==1.0.2
-mkl-service==2.0.2
 mock==2.0.0
 more-itertools==7.0.0
 MouseInfo==0.1.3
