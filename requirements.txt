@@ -33,7 +33,7 @@ cloudpickle==1.2.1
 clyent==1.2.1
 colorama==0.4.1
 comtypes==1.1.7
-conda==4.7.10
+conda==4.3.16
 conda-build==3.18.8
 conda-package-handling==1.3.11
 conda-verify==3.4.2
