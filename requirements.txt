@@ -172,7 +172,6 @@ protobuf==3.15.6
 psutil==5.6.3
 py==1.8.0
 py-cpuinfo==7.0.0
-pyarrow==2.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 PyAutoGUI==0.9.48
