@@ -1,14 +1,13 @@
-
-
-
+import flask
+from flask import send_from_directory
 app = Flask(__name__)
 
 
 
 @app.route('/')
-@app.home('/home')
+@app.route('/home')
 def home():
-  return "hello"
+    return "Hello World"
 
 if __name__ == "__main__":
     app.secret_key = 'ItIsASecret'
