@@ -27,6 +27,7 @@ def isInitialized(hand):
     except: return False
 
 @app.route('/')
+@app.home('/home')
 def home():
     mp_drawing = mp.solutions.drawing_utils
     mp_holistic = mp.solutions.holistic
