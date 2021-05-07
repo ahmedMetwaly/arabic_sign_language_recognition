@@ -24,7 +24,9 @@ def isInitialized(hand):
 @app.route('/')
 @app.route('/home')
 def home():
-   print('hello')
+   return 'hello'
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.debug = True
+    app.run()
+
