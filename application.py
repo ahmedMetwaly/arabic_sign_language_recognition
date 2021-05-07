@@ -15,11 +15,6 @@ import mediapipe as mp # Import mediapipe
 
 app = Flask(__name__)
 
-def isInitialized(hand):
-    try:
-        if hand.IsInitialized() == True:
-            return True
-    except: return False
 
 @app.route('/')
 @app.route('/home')
