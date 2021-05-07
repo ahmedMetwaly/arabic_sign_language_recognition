@@ -2,8 +2,7 @@
 
 
 app = Flask(__name__)
-with open('signs4.pkl', 'rb') as f:
-    model = pickle.load(f)
+
 
 
 @app.route('/')
