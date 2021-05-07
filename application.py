@@ -8,10 +8,7 @@ from sklearn.linear_model import LogisticRegression, RidgeClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 import pandas as pd
 import csv
-import os
 from matplotlib import pyplot as plt
-import uuid
-import time
 import cv2
 import mediapipe as mp # Import mediapipe
 
@@ -27,11 +24,8 @@ def isInitialized(hand):
     except: return False
 
 @app.route('/')
+@app.route('/home')
 def home():
-    return render_template('cam.html')
-
-@app.route('/predict',methods=['POST'])
-def predict():
     '''
     For rendering results on HTML GUI
     '''
@@ -155,17 +149,6 @@ def predict():
     cap.release()
     cv2.destroyAllWindows()
 
-
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    '''
-    For direct API calls trought request
-    '''
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
-
-    output = prediction[0]
-    return jsonify(output)
 
 if __name__ == "__main__":
     app.run(debug=True)
