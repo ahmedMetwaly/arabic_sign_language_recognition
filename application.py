@@ -14,8 +14,6 @@ import mediapipe as mp # Import mediapipe
 
 
 app = Flask(__name__)
-with open('signs4.pkl', 'rb') as f:
-    model = pickle.load(f)
 
 def isInitialized(hand):
     try:
