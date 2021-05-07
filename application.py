@@ -3,10 +3,6 @@ from flask import send_from_directory
 
 app = flask.Flask(__name__)
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/favicon.png')
 
 @app.route('/')
 @app.route('/home')
