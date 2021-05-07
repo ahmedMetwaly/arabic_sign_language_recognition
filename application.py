@@ -28,13 +28,6 @@ def isInitialized(hand):
 
 @app.route('/')
 def home():
-    return render_template('cam.html')
-
-@app.route('/predict',methods=['POST'])
-def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
     mp_drawing = mp.solutions.drawing_utils
     mp_holistic = mp.solutions.holistic
     cap = cv2.VideoCapture(0)
@@ -143,29 +136,17 @@ def predict():
                             , (15,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
                 cv2.putText(image, str(round(body_language_prob[np.argmax(body_language_prob)],2))
                             , (10,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
-                prediction_text='class should be $ {}'.format(body_language_class)
                        
             cv2.imshow('Raw Webcam Feed', image)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
-                return render_template('cam.html', prediction_text='done')
+                return "done"
 
 
 
     cap.release()
     cv2.destroyAllWindows()
 
-
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    '''
-    For direct API calls trought request
-    '''
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
-
-    output = prediction[0]
-    return jsonify(output)
 
 if __name__ == "__main__":
     app.run(debug=True)
