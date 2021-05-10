@@ -1,0 +1,5 @@
+---
+applications:
+ - name: ArabicSignLanguagRecognition
+   random-route: true
+   memory: 256M
