@@ -32,6 +32,7 @@ def isInitialized(hand):
     except: return False
 
 @app.route('/')
+@app.route('/home')
 def home():
     return render_template('cam.html')
 
