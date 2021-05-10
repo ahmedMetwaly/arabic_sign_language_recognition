@@ -15,6 +15,13 @@ import cv2
 
 app = Flask(__name__, static_url_path='')
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/favicon.png')
+
+
 with open('signs4.pkl', 'rb') as f:
     model = pickle.load(f)
 
