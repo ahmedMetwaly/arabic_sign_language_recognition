@@ -1,4 +1,4 @@
-libgl1-mesa-glx==20.3.5
+skia-python==87.1
 Flask>=1.0.0
 opencv-python==4.5.1.48
 opencv-python-headless==4.5.1.48
