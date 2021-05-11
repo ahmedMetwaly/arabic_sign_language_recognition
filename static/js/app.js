@@ -56,18 +56,30 @@ function send_photo() {
         setTimeout(send_photo, 1000);
         return;
     }
+    messageArea.innerHTML = "Predicting.."
+
     socket.emit("upload", data)
+    setTimeout(send_photo, 50);
+}
+
+function arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+       binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
 }
 
 socket.on('speak', function(message){
     const msg = new SpeechSynthesisUtterance(message);
+    synth.speak(msg);
     messageArea.innerHTML = message;
-    // synth.speak(msg);
 })
 
 socket.on('prediction', function (base64_src) {
     predictionImage.src = base64_src;
-    send_photo();
 });
 
 socket.on('connect', () => camera_start())
