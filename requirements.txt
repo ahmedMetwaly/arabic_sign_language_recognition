@@ -9,3 +9,6 @@ scikit-learn==0.24.1
 sklearn==0.0
 numpy==1.18.3
 pandas==0.24.2
+flask-socketio==5.0.1
+eventlet==0.31.0
+gunicron==20.1.0
