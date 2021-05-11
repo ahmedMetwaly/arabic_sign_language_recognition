@@ -168,5 +168,5 @@ def predict(image_data):
 
 
 if __name__ == "__main__":
-    app.config["DEBUG"] = True
+    app.config["DEBUG"] = False
     socketio.run(app)
