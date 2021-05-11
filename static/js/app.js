@@ -56,15 +56,13 @@ function send_photo() {
         setTimeout(send_photo, 1000);
         return;
     }
-    messageArea.innerHTML = "Predicting.."
-
     socket.emit("upload", data)
 }
 
 socket.on('speak', function(message){
     const msg = new SpeechSynthesisUtterance(message);
-    synth.speak(msg);
     messageArea.innerHTML = message;
+    // synth.speak(msg);
 })
 
 socket.on('prediction', function (base64_src) {
