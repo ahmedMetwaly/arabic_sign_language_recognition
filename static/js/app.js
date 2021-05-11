@@ -59,17 +59,6 @@ function send_photo() {
     messageArea.innerHTML = "Predicting.."
 
     socket.emit("upload", data)
-    setTimeout(send_photo, 50);
-}
-
-function arrayBufferToBase64( buffer ) {
-    var binary = '';
-    var bytes = new Uint8Array( buffer );
-    var len = bytes.byteLength;
-    for (var i = 0; i < len; i++) {
-       binary += String.fromCharCode( bytes[ i ] );
-    }
-    return window.btoa( binary );
 }
 
 socket.on('speak', function(message){
@@ -80,6 +69,7 @@ socket.on('speak', function(message){
 
 socket.on('prediction', function (base64_src) {
     predictionImage.src = base64_src;
+    send_photo();
 });
 
 socket.on('connect', () => camera_start())
