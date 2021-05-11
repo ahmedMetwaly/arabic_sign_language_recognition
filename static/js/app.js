@@ -64,7 +64,7 @@ function send_photo() {
     };
 
     socket.emit("upload", imageData)
-    setTimeout(send_photo, 5500);
+    setTimeout(send_photo, 100);
 }
 
 function arrayBufferToBase64( buffer ) {
