@@ -169,4 +169,4 @@ def predict(image_data):
 
 if __name__ == "__main__":
     app.config["DEBUG"] = False
-    socketio.run(app)
+    socketio.run(app,ssl_context="adhoc")
