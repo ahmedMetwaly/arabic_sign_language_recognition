@@ -1,1 +1,1 @@
-web: gunicorn application:app --workers=4 -k eventlet --log-file -
+web: gunicorn application:app --worker-connections 500 --preload --backlog 128 -k eventlet --log-file -
