@@ -58,13 +58,8 @@ function send_photo() {
     }
     messageArea.innerHTML = "Predicting.."
 
-    let imageData = {
-        "data": data,
-        "filename": "something.jpeg"
-    };
-
-    socket.emit("upload", imageData)
-    setTimeout(send_photo, 100);
+    socket.emit("upload", data)
+    setTimeout(send_photo, 50);
 }
 
 function arrayBufferToBase64( buffer ) {
@@ -80,14 +75,14 @@ function arrayBufferToBase64( buffer ) {
 socket.on('speak', function(message){
     const msg = new SpeechSynthesisUtterance(message);
     synth.speak(msg);
-    console.log(message)
+    messageArea.innerHTML = message;
 })
 
-socket.on('prediction', function (buffer) {
-    predictionImage.src = `data:image/jpeg;base64,${arrayBufferToBase64(buffer)}`;
+socket.on('prediction', function (base64_src) {
+    predictionImage.src = base64_src;
 });
 
-camera_start()
+socket.on('connect', () => camera_start())
 
 
 
